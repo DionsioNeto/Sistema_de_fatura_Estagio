@@ -1,15 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
 Route::get('/', function () {
     return view('project.index');
 });
 
 
-Route::get('/stock', function () {
-    return view('project.stock');
-});
+Route::get('/stock', [ProdutoController::class, 'stock']);
 
 Route::get('/add-stock', function () {
     return view('project.add-stock');
